@@ -13,26 +13,28 @@
 
 html {
   font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
   height: 100vh;
-  color: #495057;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #495057;
+  background-color: #fff;
 }
 
 .app {
-  min-height: 66vh;
   display: grid;
   grid-template-columns: 34rem 44rem;
   column-gap: 4rem;
   align-items: start;
+  min-height: 66vh;
 }
 
+/* ========== BUTTON ========== */
 .button {
   background-color: var(--color-medium);
   color: #343a40;
@@ -41,13 +43,14 @@ body {
   border-radius: 7px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
   background-color: var(--color-dark);
 }
 
+/* ========== SIDEBAR ========== */
 .sidebar ul {
   list-style: none;
   display: flex;
@@ -62,14 +65,13 @@ body {
   grid-template-columns: 4.8rem 1fr auto;
   align-items: center;
   column-gap: 1.6rem;
-
   padding: 1.2rem;
   border-radius: 7px;
-  transition: 0.5s;
+  transition: background-color 0.5s;
 }
 
-.selected,
-.sidebar li:hover {
+.sidebar li:hover,
+.selected {
   background-color: var(--color-lightest);
 }
 
@@ -80,18 +82,16 @@ body {
 }
 
 .sidebar li h3 {
-  grid-row: 1;
   grid-column: 2;
 }
 
 .sidebar li p {
-  grid-row: 2;
   grid-column: 2;
 }
 
 .sidebar li .button {
-  grid-row: span 2;
   grid-column: 3;
+  grid-row: span 2;
 }
 
 .sidebar > .button {
@@ -99,6 +99,7 @@ body {
   margin-right: 1.2rem;
 }
 
+/* ========== COLORS ========== */
 .green {
   color: #66a80f;
 }
@@ -107,21 +108,21 @@ body {
   color: #e03131;
 }
 
+/* ========== FORMS ========== */
 form {
-  font-size: 1.6rem;
   display: grid;
-  align-items: center;
+  font-size: 1.6rem;
   gap: 1.2rem;
-
   background-color: var(--color-lightest);
   border-radius: 7px;
+  padding: 1.2rem;
 }
 
 .form-add-friend {
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1.2fr 1.5fr;
   margin-bottom: 1.6rem;
-  padding: 1.2rem;
 }
+
 .form-split-bill {
   grid-template-columns: 1fr 12rem;
   padding: 3.2rem 4rem;
@@ -129,10 +130,13 @@ form {
 
 label {
   font-weight: 500;
+  font-size: 1.4rem;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.2;
 }
 
 label::first-letter {
-  display: inline-block;
   margin-right: 4px;
   font-size: 1.8rem;
 }
@@ -146,13 +150,13 @@ select {
   text-align: center;
   border: 1px solid var(--color-light);
   border-radius: 4px;
-  transition: 0.3s;
+  transition: border-color 0.3s;
 }
 
 input:focus,
 select:focus {
   outline: none;
-  border: 1px solid var(--color-dark);
+  border-color: var(--color-dark);
 }
 
 form .button {
